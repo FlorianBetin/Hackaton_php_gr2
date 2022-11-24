@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\UserManager;
 
-class RegisterFormController extends AbstractController
+class UserController extends AbstractController
 {
     private UserManager $userModel;
 
@@ -65,19 +65,19 @@ class RegisterFormController extends AbstractController
 
 
             if (empty($errors)) {
-                $userCheck = $this->userTable->selectByOneByEmail($userLog['email']);
+                $userCheck = $this->userModel->selectByOneByEmail($userLog['email']);
                 if ($userCheck) {
                     $_SESSION['user_id'] = $userCheck['id'];
                     header('Location: /epoque');
                 } else {
                     $errors[] = 'Votre email est éronné';
-                    return $this->twig->render('FormConnect/connect.html.twig', [
+                    return $this->twig->render('register/connect.html.twig', [
                         'errors' => $errors
                     ]);
                 }
             }
         } else {
-            return $this->twig->render('FormConnect/connect.html.twig', [
+            return $this->twig->render('register/connect.html.twig', [
                 'errors' => $errors
             ]);
         }
