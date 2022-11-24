@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    margin: 0rem;
+    padding: 0rem;
+
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+#video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
