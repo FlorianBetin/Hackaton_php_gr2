@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `backtrip`.`article` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(250) NOT NULL,
-  `description` VARCHAR(250) NULL,
+  `description` TEXT NULL,
   `Epoque_id` INT NOT NULL,
   `type_article_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -263,8 +263,8 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 
 INSERT INTO formule (`id`, `name`) VALUES 
 (1,"Basic"),
-(1,"Premium"),
-(1,"DeLuxe");
+(2,"Premium"),
+(3,"DeLuxe");
 
 INSERT INTO tarif  (`id`, `montant`, `formule_id`, `article_id`) VALUES 
 (1, 10, 1, 1),
