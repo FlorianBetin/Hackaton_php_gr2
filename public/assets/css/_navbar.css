@@ -1,0 +1,30 @@
+.navbar{
+    z-index: 10;
+    border-bottom: solid 2px rgba(41, 41, 41, 0.827);
+}
+
+.nav-link{
+    color: rgb(255, 255, 255)!important;
+    font-size: x-large;
+    background-color: rgb(49, 49, 49, 0.9);
+    border-radius: 10px;
+    
+    justify-content: flex-end;
+}
+.logo{
+    border-radius: 50%;
+    width: 100px;
+}
+.navbar-toggler{
+    color: aliceblue!important;
+}
+span{
+    color: aliceblue!important;
+}
+.collapse{
+    justify-content: end;
+}
+.navbar-nav{
+  gap: 50px;
+}
+
