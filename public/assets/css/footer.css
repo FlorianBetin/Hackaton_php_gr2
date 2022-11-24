@@ -1,0 +1,9 @@
+footer{
+    bottom: 0!important;
+    margin-top: auto;
+    background-color: rgba(240, 255, 255, 0.672)!important;
+}
+
+span h1{
+    color: black;
+}
