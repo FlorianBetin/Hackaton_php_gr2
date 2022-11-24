@@ -4,21 +4,29 @@
 {% block content %}
 
 	{# <pre>
-	    {{ dump(epoques) }}
-	</pre> #}
+		    {{ dump(epoques) }}
+		</pre> #}
+	<span class="h1epoque">
+        <h1>Choisissez l'époque à laquelle vous souhaitez que nos gènes vous transportent !</h1>
+	</span>
+	<video autoplay loop muted id="video">
+		<source src="assets/images/Romain.mp4" type="video/mp4">
+	</video>
 
-	<div class="container d-flex p-2 align-content-start flex-wrap">
+	<div class="classepoque container d-flex p-2 align-content-start justify-content-around flex-wrap">
 		{% for epoque in epoques %}
 
-			<div class="card" style="width: 18rem;">
-				<img class="card-img-top" src="https://via.placeholder.com/150x100.png" alt="Card image cap">
+<a href="epoque/articles?id={{epoque.id}}" class="card-link">
+			<div class="card " style="width: 18rem;">
+				<img class="card-img-top" src="assets/images/{{epoque.name}}.jpg" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">{{epoque.name}}</h5>
 					<h6 class="card-subtitle mb-2 text-muted">Période
 						{{epoque.date}}</h6>
-					<a href="epoque/articles?id={{epoque.id}}" class="card-link">Découvrez nos fabuleuses expériences</a>
+
+
 				</div>
-			</div>
+			</div> </a>
 
 		{% endfor %}
 	</div>
