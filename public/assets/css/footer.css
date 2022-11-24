@@ -2,10 +2,9 @@ footer{
     bottom: 0!important;
     margin-top: auto;
     background-color: rgba(240, 255, 255, 0.672)!important;
-    justify-content: space-around;
 }
 
 footer a{
     color: black!important;
-    margin: auto;
+    text-align: center;
 }

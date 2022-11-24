@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `backtrip`.`article` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(250) NOT NULL,
-  `description` VARCHAR(250) NOT NULL,
+  `description` VARCHAR(250) NULL,
   `Epoque_id` INT NOT NULL,
   `type_article_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -78,7 +78,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `backtrip`.`tarif` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `montant` INT NOT NULL,
+  `montant` INT NULL,
   `formule_id` INT NOT NULL,
   `article_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -102,8 +102,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `backtrip`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(250) NOT NULL,
-  `lastName` VARCHAR(250) NOT NULL,
+  `firstName` VARCHAR(250) NULL,
+  `lastName` VARCHAR(250) NULL,
   `e_mail` VARCHAR(250) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -147,10 +147,20 @@ CREATE TABLE IF NOT EXISTS `backtrip`.`article_has_commande` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO type_article (`id`, `name`) VALUES
+(1,"Personnalité historique"),
+(2, "Evénement"), 
+(3, "situation du quotidien");
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+INSERT INTO epoque (`id`, `name`, `date`) VALUES 
+(1,"Préhistoire", "xx AVJ JC"),
+(2,"Egypte antique", "xx AVJ JC"),
+(3,"Rome Antique", "xx AVJ JC"),
+(4,"Grèce antique", "xx AVJ JC"),
+(5,"Moyen-âge", "xx AVJ JC"),
+(6,"Renaissance - Temps modernes", "xx AVJ JC"),
+(7,"Epoque contemporaine", "xx AVJ JC"),
+(8,"20ème siècle", "xx AVJ JC");
 
 
 INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`) VALUES 
@@ -251,21 +261,6 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (95,"Revivre Woodstock",NULL,8,3);
 
 
-INSERT INTO epoque (`id`, `name`, `date`) VALUES 
-(1,"Préhistoire", "xx AVJ JC"),
-(2,"Egypte antique", "xx AVJ JC"),
-(3,"Rome Antique", "xx AVJ JC"),
-(4,"Grèce antique", "xx AVJ JC"),
-(5,"Moyen-âge", "xx AVJ JC"),
-(6,"Renaissance - Temps modernes", "xx AVJ JC"),
-(7,"Epoque contemporaine", "xx AVJ JC"),
-(8,"20ème siècle", "xx AVJ JC");
-
-INSERT INTO type_article (`id`, `name`) VALUES ¨
-(1,"Personnalité historique"),
-(2, "Evénement"), 
-(3, "situation du quotidien");
-
 INSERT INTO formule (`id`, `name`) VALUES 
 (1,"Basic"),
 (1,"Premium"),
@@ -290,3 +285,7 @@ INSERT INTO tarif  (`id`, `montant`, `formule_id`, `article_id`) VALUES
 (16, 80, 1, 6),
 (17, 90, 2, 6),
 (18, 700, 3, 6);
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
