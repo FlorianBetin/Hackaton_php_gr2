@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\EpoqueManager;
+
 class EpoqueController extends AbstractController
 {
     /**
@@ -9,6 +11,8 @@ class EpoqueController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Trips/epoque.html.twig');
+        $epoqueManager = new EpoqueManager();
+        $epoques = $epoqueManager->selectAll();
+        return $this->twig->render('Trips/epoque.html.twig', ['epoques' => $epoques,]);
     }
 }

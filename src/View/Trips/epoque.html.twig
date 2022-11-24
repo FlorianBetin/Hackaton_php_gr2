@@ -1,38 +1,22 @@
 {% extends "layout.html.twig" %}
 
 
-
 {% block content %}
-            {% include "_Include/_navbar.html.twig" %}
 
-<div class="card" style="width: 18rem;">
-<img class="card-img-top" src="https://via.placeholder.com/150x100.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+	{% for epoque in epoques %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-			{% include "_Include/_footer.html.twig" %}
+		<div class="card" style="width: 18rem;">
+			<img class="card-img-top" src="https://via.placeholder.com/150x100.png" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">{{epoque.name}}</h5>
+				<h6 class="card-subtitle mb-2 text-muted">Période
+					{{epoque.date}}</h6>
+				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+				<a href="epoque/articles{{epoque.art.id}}" class="card-link">Découvrez nos fabuleuses expériences</a>
+				<a href="#" class="card-link">Another link</a>
+			</div>
+		</div>
+	{% endfor %}
 
 
 {% endblock %}
-
-
-
