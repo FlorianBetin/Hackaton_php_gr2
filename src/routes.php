@@ -20,4 +20,5 @@ return [
     'contact' => ['ContactusController', 'index',],
     'connexion' => ['UserController', 'login',],
     'register' => ['UserController', 'addUser',],
+    'deconnexion' => ['UserController', 'logout',],
 ];
