@@ -2,13 +2,25 @@
 
 namespace App\Controller;
 
+use App\Model\ArticleManager;
+
 class ArticleController extends AbstractController
 {
     /**
      * Display Landing Page
      */
-    public function index(): string
+    public function index($id): string
     {
-        return $this->twig->render('Trips/articles.html.twig');
+
+        $articleManager = new ArticleManager();
+        $articles = $articleManager->articleByEpoqueId($id);
+        $articlesLength = count($articles);
+        $formules = $articleManager->formuleByArticle($id);
+
+        return $this->twig->render('Trips/articles.html.twig', [
+            'articles' => $articles,
+            'articlesLength' => $articlesLength,
+            'formules' => $formules
+        ]);
     }
 }
