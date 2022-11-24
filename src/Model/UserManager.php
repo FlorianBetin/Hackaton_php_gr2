@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-class RegisterManager extends AbstractManager
+class UserManager extends AbstractManager
 {
     public const TABLE = 'user';
 
@@ -12,8 +12,8 @@ class RegisterManager extends AbstractManager
     public function insert(array $user): string
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
-            " (lastname, firstname, birthdate, email, password)
-        VALUES (:lastname, :firstname, :birthdate, :email, :password)");
+            " (lastname, firstname, email,)
+        VALUES (:lastname, :firstname, :email)");
         $statement->bindValue(':lastname', $user['lastname'], \PDO::PARAM_STR);
         $statement->bindValue(':firstname', $user['firstname'], \PDO::PARAM_STR);
         $statement->bindValue(':email', $user['email'], \PDO::PARAM_STR);

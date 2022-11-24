@@ -8,7 +8,7 @@
     font-size: x-large;
     background-color: rgb(49, 49, 49, 0.9);
     border-radius: 10px;
-    
+
     justify-content: flex-end;
 }
 .logo{
@@ -28,3 +28,13 @@ span{
   gap: 50px;
 }
 
+.ulconnect {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.liconnect {
+    padding: 10px;
+    margin: 5px;
+}
