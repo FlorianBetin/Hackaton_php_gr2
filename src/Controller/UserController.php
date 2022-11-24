@@ -39,16 +39,16 @@ class UserController extends AbstractController
     private function validateregister(array $user)
     {
         $errors = [];
-        if (empty($user['firstname'])) {
+        if (empty($user['firstName'])) {
             $errors[] = 'Votre prémon est obligatoire';
         }
-        if (empty($user['lastname'])) {
+        if (empty($user['lastName'])) {
             $errors[] = 'Votre nom de famille est obligatoire';
         }
         $userManager = new UserManager();
-        if (!filter_var($user['email'], FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($user['e_mail'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Votre email est obligatoire';
-        } elseif ($userManager->selectByOneByEmail($user['email'])) {
+        } elseif ($userManager->selectByOneByEmail($user['e_mail'])) {
             $errors[] = 'Cette adresse email existe déjà';
         }
         return $errors;
@@ -65,7 +65,7 @@ class UserController extends AbstractController
 
 
             if (empty($errors)) {
-                $userCheck = $this->userModel->selectByOneByEmail($userLog['email']);
+                $userCheck = $this->userModel->selectByOneByEmail($userLog['e_mail']);
                 if ($userCheck) {
                     $_SESSION['user_id'] = $userCheck['id'];
                     header('Location: /epoque');
@@ -86,7 +86,7 @@ class UserController extends AbstractController
     public function validateconnect(array $userLog): array
     {
         $errors = [];
-        if (!filter_var($userLog['email'], FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($userLog['e_mail'], FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Votre email est obligatoire';
         }
         return $errors;

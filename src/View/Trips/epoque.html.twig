@@ -3,26 +3,24 @@
 
 {% block content %}
 
-{# <pre>
-    {{ dump(epoques) }}
-</pre> #}
+	{# <pre>
+	    {{ dump(epoques) }}
+	</pre> #}
 
-<div class="container d-flex p-2 align-content-start flex-wrap">
-	{% for epoque in epoques %}
+	<div class="container d-flex p-2 align-content-start flex-wrap">
+		{% for epoque in epoques %}
 
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://via.placeholder.com/150x100.png" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">{{epoque.name}}</h5>
-				<h6 class="card-subtitle mb-2 text-muted">Période
-					{{epoque.date}}</h6>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				<a href="epoque/articles{{epoque.id}}" class="card-link">Découvrez nos fabuleuses expériences</a>
-				<a href="#" class="card-link">Another link</a>
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src="https://via.placeholder.com/150x100.png" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{epoque.name}}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">Période
+						{{epoque.date}}</h6>
+					<a href="epoque/articles?id={{epoque.id}}" class="card-link">Découvrez nos fabuleuses expériences</a>
+				</div>
 			</div>
-		</div>
 
-	{% endfor %}
-</div>
+		{% endfor %}
+	</div>
 
 {% endblock %}

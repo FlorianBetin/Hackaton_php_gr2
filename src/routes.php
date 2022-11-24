@@ -14,10 +14,11 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     '' => ['LandingController', 'index',],
-    'epoque/articles' => ['ArticleController', 'index',],
+    'epoque/articles' => ['ArticleController', 'index', ['id']],
     'epoque' => ['EpoqueController', 'index',],
     'cart' => ['CartController', 'index',],
     'contact' => ['ContactusController', 'index',],
     'connexion' => ['UserController', 'login',],
     'register' => ['UserController', 'addUser',],
+    'deconnexion' => ['UserController', 'logout',],
 ];
