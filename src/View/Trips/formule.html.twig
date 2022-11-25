@@ -1,0 +1,26 @@
+{% extends "layout.html.twig" %}
+
+
+{% block content %}
+
+{% for formule in formules %}
+
+<video autoplay loop muted id="video">
+			<source src="assets/images/Formule.mp4" type="video/mp4">
+		</video>
+
+			<div class="card " style="width: auto;">
+				<img class="card-img-top" src="assets/images/{{formule.name}}.jpg" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{formule.name}}</h5>
+					<h6 class="card-subtitle mb-2 text-muted">{{formules.description}} </h6>
+
+				</div>
+            </div>
+
+
+{% endfor %}
+
+
+
+{% endblock %}
