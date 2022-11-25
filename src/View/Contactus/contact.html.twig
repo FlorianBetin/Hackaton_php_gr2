@@ -2,8 +2,28 @@
 
 {% block content %}
 
-<video autoplay loop muted id="video">
-			<source src="assets/images/Machine.mp4" type="video/mp4">
-		</video>
+	<video autoplay loop muted id="video">
+		<source src="assets/images/Machine.mp4" type="video/mp4">
+	</video>
+
+	<div class="mb-3">
+		<label for="exampleFormControlInput1" class="form-label">Firstname</label>
+		<input type="text" class="name" class="form-label" id="name" placeholder="firstname">
+	</div>
+	<div class="mb-3">
+		<label for="exampleFormControlInput1" class="form-label">Lastname</label>
+		<input type="text" class="name" class="form-label" id="name" placeholder="lastname">
+	</div>
+
+	<div class="mb-3">
+		<label for="exampleFormControlInput1" class="form-label">Emailaddress</label>
+		<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+	</div>
+
+
+	<div class="mb-3">
+		<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	</div>
 
 {% endblock %}

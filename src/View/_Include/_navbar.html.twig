@@ -4,36 +4,37 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div>
-        <a href="/acceuil">
-			<img class="logo" src="assets/images/logo.png" alt="logo">
-		</div>
-        </a>
-        {% if user %}
-        <ul class='ulconnect'>
-        <li class="nav-item">
-			<a class="nav-link liconnect" href="deconnexion">Deconnexion</a>
-		</li>
-        </ul>
-        {% else %}
-        <ul class='ulconnect'>
-        <li class="nav-item">
-					<a class="nav-link liconnect" href="register">S'enregistrer</a>
+			<a href="/acceuil">
+				<img class="logo" src="/assets/images/logo.png" alt="logo">
+			</div>
+		</a>
+		{% if user %}
+			<ul class='ulconnect'>
+				<li class="nav-item">
+					<a class="nav-link liconnect" href="deconnexion">Deconnexion</a>
 				</li>
-        <li class="nav-item">
-					<a class="nav-link liconnect" href="connexion">Se connecter </a>
-		</li>
-        </ul>
-        {% endif %}
+			</ul>
+		{% else %}
+			<ul class='ulconnect'>
+				<li class="nav-item">
+					<a class="nav-link liconnect" href="/register">S'enregistrer</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link liconnect" href="/connexion">Se connecter
+					</a>
+				</li>
+			</ul>
+		{% endif %}
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="/">Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="epoque">Expériences</a>
+					<a class="nav-link" href="/epoque">Expériences</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="cart">Panier</a>
+					<a class="nav-link" href="/cart">Panier</a>
 				</li>
 			</ul>
 		</div>
