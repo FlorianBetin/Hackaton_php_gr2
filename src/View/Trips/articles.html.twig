@@ -1,91 +1,215 @@
 {% extends "layout.html.twig" %}
 
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/_article.css">
+{% endblock %}
+
 {% block content %}
 
-<video autoplay loop muted id="video">
-			<source src="assets/images/Medieval.mp4" type="video/mp4">
-		</video>
+	<h1 class="title text-center mb-5">
+		{{articles[0].epoque_name}}
+	</h1>
 
 
-	<h1>Les Personnages</h1>
+	<h2 class="category mb-5 px-5">Dans la peau d'une personnalité de l'époque
+	</h2>
 
+	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+		<div class="row align-items-center ">
 
-	{% for i in 0..articlesLength %}
+			{% set index = 0 %}
+			{% set u = "30" %}
 
-		{% if articles[i].name_type =="Personnalité historique" %}
+			{% for article in articles %}
 
-			<div class="container-fluid flex-row">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">{{articles[i].name}}</h5>
-						<h5 class="card-title">Formule
-							{{formules[i].formule_name}}</h5>
-						<h6 class="card-title">{{formules[i].montant}}
-							Millions $</h6>
-						<p class="card-text">{{articles[i].description}}</p>
-						<a href="#" class="card-link">Ajouter au panier</a>
+				{% if articles[index].name_type =="Personnalité historique" %}
 
+					<div class="col">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top" src="https://picsum.photos/id/{{articles[index].tarif_id + 130}}/200/300" alt=" card image cap">
+							<div class="card-body">
+								<form action="" method="post">
+									<h5 class="article card-title">{{articles[index].name}}</h5>
+									<p class="card-text">{{articles[index].description}}</p>
+
+									<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
+
+										<option class="select" value={{articles[index].tarif_id}}>
+											Formule
+											{{articles[index].formule_name}}
+											:
+											{{articles[index].montant}}
+											Millions $
+										</option>
+
+										<option class="select" value={{articles[index + 1].tarif_id}}>
+											Formule
+											{{articles[index + 1].formule_name}}
+											:
+											{{articles[index + 1].montant}}
+											Millions $
+										</option>
+
+										<option class="select" value={{articles[index + 2].tarif_id}}>
+											Formule
+											{{articles[index + 2].formule_name}}
+											:
+											{{articles[index + 2].montant}}
+											Millions $
+										</option>
+									</select>
+
+									<div class="button">
+										<button class="select m-2" type="submit">Ajouter au panier</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-		{% endif %}
-
-	{% endfor %}
 
 
-	<h1>Les Grands évènements</h1>
+				{% endif %}
+				{% set index = index + 3 %}
+				{% set u = u + 1 %}
 
-	{% for i in 0..articlesLength %}
 
-		{% if articles[i].name_type =="Evénement" %}
+			{% endfor %}
+		</div>
+	</div>
 
-			<div class="container-fluid flex-row">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">{{articles[i].name}}</h5>
-						<h5 class="card-title">Formule
-							{{formules[i].formule_name}}</h5>
-						<h6 class="card-title">{{formules[i].montant}}
-							Millions $</h6>
-						<p class="card-text">{{articles[i].description}}</p>
-						<a href="#" class="card-link">Ajouter au panier</a>
 
+	<h2 class="category mb-5 px-5">Revivre les Grands évènements</h2>
+
+
+	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+		<div class="row align-items-center ">
+
+			{% set index = 0 %}
+
+			{% for article in articles %}
+
+				{% if articles[index].name_type =="Evénement" %}
+
+					<div class="col">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top" src="https://picsum.photos/id/{{articles[index].tarif_id + 130}}/200/300" alt="Card image cap">
+							<div class="card-body">
+								<form action="" method="post">
+									<h5 class="article card-title">{{articles[index].name}}</h5>
+									<p class="card-text">{{articles[index].description}}</p>
+
+									<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
+
+										<option class="select" value={{articles[index].tarif_id}}>
+											Formule
+											{{articles[index].formule_name}}
+											:
+											{{articles[index].montant}}
+											Millions $
+										</option>
+
+										<option class="select" value={{articles[index + 1].tarif_id}}>
+											Formule
+											{{articles[index + 1].formule_name}}
+											:
+											{{articles[index + 1].montant}}
+											Millions $
+										</option>
+
+										<option class="select" value={{articles[index + 2].tarif_id}}>
+											Formule
+											{{articles[index + 2].formule_name}}
+											:
+											{{articles[index + 2].montant}}
+											Millions $
+										</option>
+									</select>
+
+									<div class="button">
+										<button class="select m-2" type="submit">Ajouter au panier</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-		{% endif %}
-
-	{% endfor %}
 
 
-	<h1>Les situations du quotidien</h1>
+				{% endif %}
+				{% set index = index + 3 %}
+				{% set u = u + 1 %}
 
-	{% for i in 0..articlesLength %}
 
-		{% if articles[i].name_type =="situation du quotidien" %}
+			{% endfor %}
+		</div>
+	</div>
 
-			<div class="container-fluid flex-row">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="https://picsum.photos/200/300" alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">{{articles[i].name}}</h5>
-						<h5 class="card-title">Formule
-							{{formules[i].formule_name}}</h5>
-						<h6 class="card-title">{{formules[i].montant}}
-							Millions $</h6>
-						<p class="card-text">{{articles[i].description}}</p>
-						<a href="#" class="card-link">Ajouter au panier</a>
+	<h2 class="category mb-5 px-5">
+		Découvrir le quotidien de l'époque
+	</h2>
 
+	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+		<div class="row align-items-center ">
+
+			{% set index = 0 %}
+
+			{% for article in articles %}
+
+				{% if articles[index].name_type =="situation du quotidien" %}
+
+					<div class="col">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top" src="https://picsum.photos/id/{{articles[index].tarif_id + 270}}/200/300" alt="Card image cap">
+							<div class="card-body">
+								<form action="" method="post">
+									<h5 class=" article card-title">{{articles[index].name}}</h5>
+									<p class="card-text">{{articles[index].description}}</p>
+
+									<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
+
+										<option class="select" value={{articles[index].tarif_id}}>
+											Formule
+											{{articles[index].formule_name}}
+											:
+											{{articles[index].montant}}
+											Millions $
+										</option>
+
+										<option class="select" value={{articles[index + 1].tarif_id}}>
+											Formule
+											{{articles[index + 1].formule_name}}
+											:
+											{{articles[index + 1].montant}}
+											Millions $
+										</option>
+
+										<option class="select" value={{articles[index + 2].tarif_id}}>
+											Formule
+											{{articles[index + 2].formule_name}}
+											:
+											{{articles[index + 2].montant}}
+											Millions $
+										</option>
+									</select>
+
+									<div class="button">
+										<button class="select m-2" type="submit">Ajouter au panier</button>
+									</div>
+								</form>
+
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
-		{% endif %}
 
-	{% endfor %}
+				{% endif %}
+				{% set index = index + 3 %}
+				{% set u = u + 1 %}
+
+
+			{% endfor %}
+		</div>
+	</div>
 
 {% endblock %}

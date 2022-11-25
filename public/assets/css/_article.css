@@ -1,0 +1,21 @@
+.title {
+
+    font-size: 6rem;
+
+}
+
+.category {
+
+    font-size: 4rem;
+
+}
+
+.article {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.select {
+    font-size: 1rem;
+    font-weight: bold;
+}
