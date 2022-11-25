@@ -15,12 +15,11 @@ class ArticleController extends AbstractController
         $articleManager = new ArticleManager();
         $articles = $articleManager->articleByEpoqueId($id);
         $articlesLength = count($articles);
-        $formules = $articleManager->formuleByArticle($id);
 
         return $this->twig->render('Trips/articles.html.twig', [
             'articles' => $articles,
             'articlesLength' => $articlesLength,
-            'formules' => $formules
+
         ]);
     }
 }
