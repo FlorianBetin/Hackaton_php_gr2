@@ -7,6 +7,8 @@
   display: flex;
   justify-content: space-around;
   margin: 150px 300px;
+  border-radius: 15px;
+  flex-direction: column;
 }
 
 p{
@@ -15,6 +17,18 @@ p{
     width: auto;
     font-size: large;
     font-weight: bold;
+}
+
+.btnlanding{
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+
+
+}
+
+.btnyes{
+  padding: 20px;
 }
 
 @media screen and (max-width:1000px) {
