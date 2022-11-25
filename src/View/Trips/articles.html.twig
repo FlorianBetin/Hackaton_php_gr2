@@ -5,215 +5,226 @@
 {% endblock %}
 
 {% block content %}
-	<video autoplay loop muted id="video">
-		<source src="/assets/images/eglise.mp4" type="video/mp4">
-	</video>
+
+	{% if articles is not null %}
+
+		<video autoplay loop muted id="video">
+			<source src="/assets/images/eglise.mp4" type="video/mp4">
+		</video>
 
 
-	<h1 class="title text-center text-white mb-5">
-		{{articles[0].epoque_name}}
-	</h1>
+		<h1 class="title text-center text-white mb-5">
+			{{articles[0].epoque_name}}
+		</h1>
 
 
-	<h2 class="category mb-5 text-white  px-5">Dans la peau d'une personnalité de l'époque
-	</h2>
+		<h2 class="category mb-5 text-white  px-5">Dans la peau d'une personnalité de l'époque
+		</h2>
 
-	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
-		<div class="row align-items-center ">
+		<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+			<div class="row align-items-center ">
 
-			{% set index = 0 %}
+				{% set index = 0 %}
 
-			{% set u = "30" %}
+				{% set u = "30" %}
 
-			{% for article in articles %}
-				{% if articles[index].name_type =="Personnalité historique" %}
+				{% for article in articles %}
+					{% if articles[index].name_type =="Personnalité historique" %}
 
-					<div class="col">
-						<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="/assets/images/{{articles[index].article_id}}.jpg" alt=" card image cap">
-							<div class="card-body">
-								<form action="/cart" name="add" method="post">
-									<h5 class="article card-title">{{articles[index].name}}</h5>
-									<p class="card-text">{{articles[index].description}}</p>
+						<div class="col">
+							<div class="card" style="width: 18rem;">
+								<img class="card-img-top" src="/assets/images/{{articles[index].article_id}}.jpg" alt=" card image cap">
+								<div class="card-body">
+									<form action="/cart" name="add" method="post">
+										<h5 class="article card-title">{{articles[index].name}}</h5>
+										<p class="card-text">{{articles[index].description}}</p>
 
-									<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
+										<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
 
-										<option class="select" value={{articles[index].tarif_id}}>
-											Formule
-											{{articles[index].formule_name}}
-											:
-											{{articles[index].montant}}
-											Millions $
-										</option>
+											<option class="select" value={{articles[index].tarif_id}}>
 
-										<option class="select" value={{articles[index + 1].tarif_id}}>
-											Formule
-											{{articles[index + 1].formule_name}}
-											:
-											{{articles[index + 1].montant}}
-											Millions $
-										</option>
+												{{articles[index].formule_name}}
+												:
+												{{articles[index].montant}}
+												Millions $
+											</option>
 
-										<option class="select" value={{articles[index + 2].tarif_id}}>
-											Formule
-											{{articles[index + 2].formule_name}}
-											:
-											{{articles[index + 2].montant}}
-											Millions $
-										</option>
-									</select>
+											<option class="select" value={{articles[index + 1].tarif_id}}>
 
-									<div class="button">
-										<button class="select m-2" type="submit">Ajouter au panier</button>
-									</div>
-								</form>
+												{{articles[index + 1].formule_name}}
+												:
+												{{articles[index + 1].montant}}
+												Millions $
+											</option>
 
+											<option class="select" value={{articles[index + 2].tarif_id}}>
+
+												{{articles[index + 2].formule_name}}
+												:
+												{{articles[index + 2].montant}}
+												Millions $
+											</option>
+										</select>
+
+										<div class="button">
+											<button class="select m-2" type="submit">Ajouter au panier</button>
+										</div>
+									</form>
+
+								</div>
 							</div>
 						</div>
-					</div>
 
 
-				{% endif %}
-				{% set index = index + 3 %}
-				{% set u = u + 1 %}
+					{% endif %}
+					{% set index = index + 3 %}
+					{% set u = u + 1 %}
 
 
-			{% endfor %}
+				{% endfor %}
+			</div>
 		</div>
-	</div>
 
 
-	<h2 class="category mb-5 text-white  px-5">Revivre les Grands évènements</h2>
+		<h2 class="category mb-5 text-white  px-5">Revivre les Grands évènements</h2>
 
 
-	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
-		<div class="row align-items-center ">
+		<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+			<div class="row align-items-center ">
 
-			{% set index = 0 %}
+				{% set index = 0 %}
 
-			{% for article in articles %}
+				{% for article in articles %}
 
-				{% if articles[index].name_type =="Evénement" %}
+					{% if articles[index].name_type =="Evénement" %}
 
-					<div class="col">
-						<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="/assets/images/{{articles[index].article_id}}.jpg" alt="Card image cap">
-							<div class="card-body">
-								<form action="/cart" method="post">
-									<h5 class="article card-title">{{articles[index].name}}</h5>
-									<p class="card-text">{{articles[index].description}}</p>
+						<div class="col">
+							<div class="card" style="width: 18rem;">
+								<img class="card-img-top" src="/assets/images/{{articles[index].article_id}}.jpg" alt="Card image cap">
+								<div class="card-body">
+									<form action="/cart" method="post">
+										<h5 class="article card-title">{{articles[index].name}}</h5>
+										<p class="card-text">{{articles[index].description}}</p>
 
-									<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
+										<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
 
-										<option class="select" value={{articles[index].tarif_id}}>
-											Formule
-											{{articles[index].formule_name}}
-											:
-											{{articles[index].montant}}
-											Millions $
-										</option>
+											<option class="select" value={{articles[index].tarif_id}}>
 
-										<option class="select" value={{articles[index + 1].tarif_id}}>
-											Formule
-											{{articles[index + 1].formule_name}}
-											:
-											{{articles[index + 1].montant}}
-											Millions $
-										</option>
+												{{articles[index].formule_name}}
+												:
+												{{articles[index].montant}}
+												Millions $
+											</option>
 
-										<option class="select" value={{articles[index + 2].tarif_id}}>
-											Formule
-											{{articles[index + 2].formule_name}}
-											:
-											{{articles[index + 2].montant}}
-											Millions $
-										</option>
-									</select>
+											<option class="select" value={{articles[index + 1].tarif_id}}>
 
-									<div class="button">
-										<button class="select m-2" type="submit">Ajouter au panier</button>
-									</div>
-								</form>
+												{{articles[index + 1].formule_name}}
+												:
+												{{articles[index + 1].montant}}
+												Millions $
+											</option>
 
+											<option class="select" value={{articles[index + 2].tarif_id}}>
+
+												{{articles[index + 2].formule_name}}
+												:
+												{{articles[index + 2].montant}}
+												Millions $
+											</option>
+										</select>
+
+										<div class="button">
+											<button class="select m-2" type="submit">Ajouter au panier</button>
+										</div>
+									</form>
+
+								</div>
 							</div>
 						</div>
-					</div>
 
 
-				{% endif %}
-				{% set index = index + 3 %}
-				{% set u = u + 1 %}
+					{% endif %}
+					{% set index = index + 3 %}
+					{% set u = u + 1 %}
 
 
-			{% endfor %}
+				{% endfor %}
+			</div>
 		</div>
-	</div>
 
-	<h2 class="category mb-5 text-white  px-5">
-		Découvrir le quotidien de l'époque
-	</h2>
+		<h2 class="category mb-5 text-white  px-5">
+			Découvrir le quotidien de l'époque
+		</h2>
 
-	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
-		<div class="row align-items-center ">
+		<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+			<div class="row align-items-center ">
 
-			{% set index = 0 %}
+				{% set index = 0 %}
 
-			{% for article in articles %}
+				{% for article in articles %}
 
-				{% if articles[index].name_type =="situation du quotidien" %}
+					{% if articles[index].name_type =="situation du quotidien" %}
 
-					<div class="col">
-						<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="/assets/images/{{articles[index].article_id}}.jpg" alt="Card image cap">
-							<div class="card-body">
-								<form action="/cart" method="post">
-									<h5 class=" article card-title">{{articles[index].name}}</h5>
-									<p class="card-text">{{articles[index].description}}</p>
+						<div class="col">
+							<div class="card" style="width: 18rem;">
+								<img class="card-img-top" src="/assets/images/{{articles[index].article_id}}.jpg" alt="Card image cap">
+								<div class="card-body">
+									<form action="/cart" method="post">
+										<h5 class=" article card-title">{{articles[index].name}}</h5>
+										<p class="card-text">{{articles[index].description}}</p>
 
-									<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
+										<select class="select" name="formule" id="formule" data-id="{{articles[index].id}}">
 
-										<option class="select" value={{articles[index].tarif_id}}>
-											Formule
-											{{articles[index].formule_name}}
-											:
-											{{articles[index].montant}}
-											Millions $
-										</option>
+											<option class="select" value={{articles[index].tarif_id}}>
 
-										<option class="select" value={{articles[index + 1].tarif_id}}>
-											Formule
-											{{articles[index + 1].formule_name}}
-											:
-											{{articles[index + 1].montant}}
-											Millions $
-										</option>
+												{{articles[index].formule_name}}
+												:
+												{{articles[index].montant}}
+												Millions $
+											</option>
 
-										<option class="select" value={{articles[index + 2].tarif_id}}>
-											Formule
-											{{articles[index + 2].formule_name}}
-											:
-											{{articles[index + 2].montant}}
-											Millions $
-										</option>
-									</select>
+											<option class="select" value={{articles[index + 1].tarif_id}}>
 
-									<div class="button">
-										<button class="select m-2" type="submit">Ajouter au panier</button>
-									</div>
-								</form>
+												{{articles[index + 1].formule_name}}
+												:
+												{{articles[index + 1].montant}}
+												Millions $
+											</option>
 
+											<option class="select" value={{articles[index + 2].tarif_id}}>
+
+												{{articles[index + 2].formule_name}}
+												:
+												{{articles[index + 2].montant}}
+												Millions $
+											</option>
+										</select>
+
+										<div class="button">
+											<button class="select m-2" type="submit">Ajouter au panier</button>
+										</div>
+									</form>
+
+								</div>
 							</div>
 						</div>
-					</div>
 
 
-				{% endif %}
-				{% set index = index + 3 %}
-				{% set u = u + 1 %}
+					{% endif %}
+					{% set index = index + 3 %}
+					{% set u = u + 1 %}
 
 
-			{% endfor %}
+				{% endfor %}
+			</div>
 		</div>
-	</div>
+
+	{% else %}
+		<h1>
+			Votre panier est vide !</h1>
+		<h2>
+			Tentez l'expérience sans plus attendre !!!!</h2>
+	{% endif %}
+
 
 {% endblock %}
