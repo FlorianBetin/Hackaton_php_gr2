@@ -15,7 +15,7 @@ class CartController extends AbstractController
 
         $cartManager = new CartManager();
         $carts = $cartManager->cartBytarifId($_POST['formule']);
-        var_dump($_POST['formule']);
+        // var_dump($_POST['formule']);
 
         return $this->twig->render(
             'Cart/cart.html.twig',
