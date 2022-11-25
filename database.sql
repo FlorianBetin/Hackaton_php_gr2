@@ -69,6 +69,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `backtrip`.`formule` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(250) NOT NULL,
+  `description` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -202,7 +203,7 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (36,"W. Churchill",NULL,8,1),
 (37,"G. De Gaulles",NULL,8,1),
 (38,"Clémenceau",NULL,8,1),
-(39,"Joséphine Becker",NULL,8,1),
+(39,"Joséphine Baker",NULL,8,1),
 (40,"Découverte du feu",NULL,1,2),
 (41,"Fabrication d'outils",NULL,1,2),
 (42,"Elevage - Agriculture",NULL,1,2),
@@ -247,7 +248,7 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (81,"Moine",NULL,5,3),
 (82,"Paysan",NULL,5,3),
 (83,"Carnaval",NULL,5,3),
-(84,"Marche",NULL,5,3),
+(84,"Marché",NULL,5,3),
 (85,"Verrier",NULL,6,3),
 (86,"Drapier",NULL,6,3),
 (87,"Pirate",NULL,6,3),
@@ -261,10 +262,12 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (95,"Revivre Woodstock",NULL,8,3);
 
 
-INSERT INTO formule (`id`, `name`) VALUES 
-(1,"Basic"),
-(2,"Premium"),
-(3,"DeLuxe");
+INSERT INTO formule (`id`, `name`, `description`) VALUES 
+(1,"Aller Simple", "Vous avez beaucoup d’argent et vous avez déshérité votre descendance ? Vous voulez un dernier voyage exaltant ? Vivre comme un pauvre paysan au moyen-âge serait peut être votre pénitence ! Dans tous les cas, notre formule aller-simple est là pour vous. Avant de partir pour l’autre monde, partez dans le passé. Nous nous occupons de votre dépouille mortuaire. 
+"),
+(2,"Deuxième Classe", "Les voyages dans le passé génétique excitent votre intelligence, et c'est tout ce dont vous avez besoin ! Votre corps peut bien souffrir de quelques crampes et quelques escarres, et se nourrir de perfusions… le savoir avant tout !
+"),
+(3,"Première Classe", "Explorer le passé, oui ! Mais revenir dans un corps détraqué, hors de question pour vous. Nan, il vous faut un lit moelleux cinq étoiles, des masseurs pour revigorer votre corps et des bains de lait et de miel. L’immersion dans la vie de Cléopâtre ne se fait pas en guenilles. Et même vivre la vie cocasse d’un gueux, ne vas dire qu’on veut en être un. La première classe vous fera voyager dans le passé, et votre corps restera un présent offert au monde.");
 
 INSERT INTO tarif  (`id`, `montant`, `formule_id`, `article_id`) VALUES 
 (1, 10, 1, 1),

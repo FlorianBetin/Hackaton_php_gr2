@@ -6,8 +6,7 @@
     padding: 20px;
   display: flex;
   justify-content: space-around;
-  /* margin: 150px 300px; */
-  margin-top: 100px;
+  margin: 150px 300px;
 }
 
 p{
@@ -15,11 +14,13 @@ p{
     text-align: center;
     width: auto;
     font-size: large;
+    font-weight: bold;
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (max-width:1000px) {
     .content{
-        margin: 150px 300px;
+        margin: 200px 10px;
     }
     
+
 }

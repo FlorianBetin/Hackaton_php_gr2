@@ -1,0 +1,31 @@
+.form-group{
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    background-color: rgba(0, 0, 0, 0.364);
+    padding: 30px;
+    justify-content: center;
+    color: white!important;
+    margin: 40px auto;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.buttonform{
+    color: white!important;
+    border: 2px solid white;
+    width: 70%;
+    margin-top: 10px;
+    
+}
+.buttonformdiv{
+    display: flex;
+    justify-content: center;
+}
+
+.h1contact{
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    margin: auto;
+    font-weight: bold;
+}
