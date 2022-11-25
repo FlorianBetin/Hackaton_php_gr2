@@ -14,14 +14,19 @@ class CartController extends AbstractController
 
 
         $cartManager = new CartManager();
-        $carts = $cartManager->cartBytarifId($_POST['formule']);
-        var_dump($_POST['formule']);
+        if ($_POST) {
+            $carts = $cartManager->cartBytarifId($_POST['formule']);
 
-        return $this->twig->render(
-            'Cart/cart.html.twig',
-            [
-                'carts' => $carts
-            ]
-        );
+            return $this->twig->render(
+                'Cart/cart.html.twig',
+                [
+                    'carts' => $carts
+                ]
+            );
+        } else {
+            return $this->twig->render(
+                'Cart/cart.html.twig'
+            );
+        }
     }
 }
