@@ -21,4 +21,5 @@ return [
     'connexion' => ['UserController', 'login',],
     'register' => ['UserController', 'addUser',],
     'deconnexion' => ['UserController', 'logout',],
+    'formule' => ['FormuleController', 'index',],
 ];
