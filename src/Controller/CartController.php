@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\CartManager;
+
 class CartController extends AbstractController
 {
     /**
@@ -9,6 +11,17 @@ class CartController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Cart/cart.html.twig');
+
+
+        $cartManager = new CartManager();
+        $carts = $cartManager->cartBytarifId($_POST['formule']);
+        var_dump($_POST['formule']);
+
+        return $this->twig->render(
+            'Cart/cart.html.twig',
+            [
+                'carts' => $carts
+            ]
+        );
     }
 }

@@ -2,9 +2,36 @@
 
 {% block content %}
 
-<video autoplay loop muted id="video">
-			<source src="assets/images/Compter.mp4" type="video/mp4">
-		</video>
+	<video autoplay loop muted id="video">
+		<source src="assets/images/Compter.mp4" type="video/mp4">
+	</video>
+
+
+	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+		<div class="row align-items-center ">
+
+
+			{% for cart in carts %}
+
+				<div class="col">
+					<div class="card" style="width: 18rem;">
+						<p>Votre choix :
+							{{cart.name}}
+						</p>
+						<p>Formule :
+							{{cart.formule_name}}</p>
+						<p>Tarif :
+							{{cart.montant}}
+							Millions $</p>
+
+
+					</div>
+				</div>
+
+
+			{% endfor %}
+		</div>
+	</div>
 
 
 {% endblock %}
