@@ -2,3 +2,17 @@
     max-width: 15vw;
 }
 
+
+.formulecard{
+    max-width: 80vw;
+    align-self: center;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    padding: 0.5rem;
+}
+
+.formuleh6 {
+    color: black;
+}
