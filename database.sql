@@ -202,7 +202,7 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (36,"W. Churchill",NULL,8,1),
 (37,"G. De Gaulles",NULL,8,1),
 (38,"Clémenceau",NULL,8,1),
-(39,"Joséphine Becker",NULL,8,1),
+(39,"Joséphine Baker",NULL,8,1),
 (40,"Découverte du feu",NULL,1,2),
 (41,"Fabrication d'outils",NULL,1,2),
 (42,"Elevage - Agriculture",NULL,1,2),
@@ -247,7 +247,7 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (81,"Moine",NULL,5,3),
 (82,"Paysan",NULL,5,3),
 (83,"Carnaval",NULL,5,3),
-(84,"Marche",NULL,5,3),
+(84,"Marché",NULL,5,3),
 (85,"Verrier",NULL,6,3),
 (86,"Drapier",NULL,6,3),
 (87,"Pirate",NULL,6,3),
@@ -262,9 +262,9 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 
 
 INSERT INTO formule (`id`, `name`) VALUES 
-(1,"Basic"),
-(2,"Premium"),
-(3,"DeLuxe");
+(1,"Aller Simple"),
+(2,"Deuxième Classe"),
+(3,"Première Classe");
 
 INSERT INTO tarif  (`id`, `montant`, `formule_id`, `article_id`) VALUES 
 (1, 10, 1, 1),
