@@ -5,25 +5,34 @@
 	<video autoplay loop muted id="video">
 		<source src="assets/images/Machine.mp4" type="video/mp4">
 	</video>
-
-	<div class="mb-3">
-		<label for="exampleFormControlInput1" class="form-label">Firstname</label>
-		<input type="text" class="name" class="form-label" id="name" placeholder="firstname">
-	</div>
-	<div class="mb-3">
-		<label for="exampleFormControlInput1" class="form-label">Lastname</label>
-		<input type="text" class="name" class="form-label" id="name" placeholder="lastname">
-	</div>
-
-	<div class="mb-3">
-		<label for="exampleFormControlInput1" class="form-label">Emailaddress</label>
-		<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-	</div>
-
-
-	<div class="mb-3">
-		<label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-	</div>
-
+	<h1 class="h1contact">Contactez-Nous</h1>
+	<form>
+		<div class="form-group">
+			<label for="exampleFormControlInput1">Votre Email</label>
+			<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+		</div>
+		<div class="form-group">
+			<label for="exampleFormControlSelect1">Réclamation</label>
+			<select class="form-control" id="exampleFormControlSelect1">
+				<option>Sélectionner le motif</option>
+				<option>Décès d'un proche</option>
+				<option>Décès de vous même</option>
+				<option>Décès</option>
+				<option>Nous ne faisons pas de remboursement</option>
+				<option>Autre (mais on en doute)</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="exampleFormControlTextarea1">Explications</label>
+			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+			<div class="buttonformdiv">
+				<button type="button" onclick="affichage();" class="buttonform btn btn-outline-dark">Envoyez de l'argent surtout</button>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+		function affichage() {
+prompt("Oui ça marche pas :)");
+}
+	</script>
 {% endblock %}

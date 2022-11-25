@@ -5,13 +5,17 @@
 {% endblock %}
 
 {% block content %}
+	<video autoplay loop muted id="video">
+		<source src="/assets/images/eglise.mp4" type="video/mp4">
+	</video>
 
-	<h1 class="title text-center mb-5">
+
+	<h1 class="title text-center text-white mb-5">
 		{{articles[0].epoque_name}}
 	</h1>
 
 
-	<h2 class="category mb-5 px-5">Dans la peau d'une personnalité de l'époque
+	<h2 class="category mb-5 text-white  px-5">Dans la peau d'une personnalité de l'époque
 	</h2>
 
 	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
@@ -22,7 +26,6 @@
 			{% set u = "30" %}
 
 			{% for article in articles %}
-
 				{% if articles[index].name_type =="Personnalité historique" %}
 
 					<div class="col">
@@ -80,7 +83,7 @@
 	</div>
 
 
-	<h2 class="category mb-5 px-5">Revivre les Grands évènements</h2>
+	<h2 class="category mb-5 text-white  px-5">Revivre les Grands évènements</h2>
 
 
 	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
@@ -146,7 +149,7 @@
 		</div>
 	</div>
 
-	<h2 class="category mb-5 px-5">
+	<h2 class="category mb-5 text-white  px-5">
 		Découvrir le quotidien de l'époque
 	</h2>
 
