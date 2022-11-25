@@ -69,6 +69,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `backtrip`.`formule` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(250) NOT NULL,
+  `description` TEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -261,10 +262,12 @@ INSERT INTO article (`id`, `name`, `description`, `Epoque_id`, `type_article_id`
 (95,"Revivre Woodstock",NULL,8,3);
 
 
-INSERT INTO formule (`id`, `name`) VALUES 
-(1,"Aller Simple"),
-(2,"Deuxième Classe"),
-(3,"Première Classe");
+INSERT INTO formule (`id`, `name`, `description`) VALUES 
+(1,"Aller Simple", "Vous avez beaucoup d’argent et vous avez déshérité votre descendance ? Vous voulez un dernier voyage exaltant ? Vivre comme un pauvre paysan au moyen-âge serait peut être votre pénitence ! Dans tous les cas, notre formule aller-simple est là pour vous. Avant de partir pour l’autre monde, partez dans le passé. Nous nous occupons de votre dépouille mortuaire. 
+"),
+(2,"Deuxième Classe", "Les voyages dans le passé génétique excitent votre intelligence, et c'est tout ce dont vous avez besoin ! Votre corps peut bien souffrir de quelques crampes et quelques escarres, et se nourrir de perfusions… le savoir avant tout !
+"),
+(3,"Première Classe", "Explorer le passé, oui ! Mais revenir dans un corps détraqué, hors de question pour vous. Nan, il vous faut un lit moelleux cinq étoiles, des masseurs pour revigorer votre corps et des bains de lait et de miel. L’immersion dans la vie de Cléopâtre ne se fait pas en guenilles. Et même vivre la vie cocasse d’un gueux, ne vas dire qu’on veut en être un. La première classe vous fera voyager dans le passé, et votre corps restera un présent offert au monde.");
 
 INSERT INTO tarif  (`id`, `montant`, `formule_id`, `article_id`) VALUES 
 (1, 10, 1, 1),
