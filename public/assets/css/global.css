@@ -27,3 +27,8 @@ body {
     min-height: 100%;
     object-fit: cover
 }
+
+h2{
+    font-weight: bold;
+    text-align: center;
+} 

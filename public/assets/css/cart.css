@@ -1,0 +1,21 @@
+.panierdeyoplait p {
+    font-weight: bold;
+    margin-left: auto;
+    width:100% ;
+    
+}
+
+.momentdepayer{
+color: white;
+}
+.allcart{
+    justify-content: center;
+}
+.panier{
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.549);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 40px;;
+    
+}

@@ -7,14 +7,14 @@
 	</video>
 
 
-	<div class="container-fluid d-flex justify-content-center mb-5 px-5">
+	<div class=" allcart container-fluid d-flex justify-content-center mb-5 px-5">
 		<div class="row align-items-center ">
-
 
 			{% for cart in carts %}
 
-				<div class="col">
-					<div class="card" style="width: 18rem;">
+				<div class="panier row-md-2 d-flex">
+					<h1 class="momentdepayer">Détail de votre commande</h1>
+					<div class="panierdeyoplait card">
 						<p>Votre choix :
 							{{cart.name}}
 						</p>

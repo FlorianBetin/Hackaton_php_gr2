@@ -16,3 +16,15 @@
     text-align: center;
 
 }
+
+.card-body{
+    
+    color: black!important;
+    text-decoration: underline!important;
+    text-decoration-color: white!important;
+}
+
+.card-title{
+    font-weight:bold!important;
+    text-decoration: none!important;
+}
